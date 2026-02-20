@@ -1,0 +1,13 @@
+﻿<div class="alert alert-success">
+    <h2>@Title</h2>
+    <div>@DisplayMessage</div>
+</div>
+
+
+@code {
+    [Parameter, EditorRequired]
+    public string DisplayMessage { get; set; } = "";
+
+    [Parameter]
+    public string Title { get; set; } = "";
+}

@@ -2,6 +2,30 @@
 
 <h3>About ME</h3>
 <p> My name is Mohsen Sohrabi. I am a .Net developer with over five years of experience.</p>
-@code {
 
+<h3>Reverse a string</h3>
+<div class="vstack gap-3 col-8 col-md-6">
+    <InputText class="form-control" placeholder="Enter a text to reverse" @bind-Value="message" />
+    <div class="text-end">
+        <button class="btn btn-primary" @onclick="ReverseMe">Reverse me</button>
+    </div>
+    <hr />
+    @if (reversedMessage != "")
+    {
+        <Message DisplayMessage="@reversedMessage" />
+    }
+    
+</div>
+
+@code {
+    private string message = "Reverse me";
+    private string reversedMessage = "";
+    private void ReverseMe()
+    {
+        reversedMessage = "";
+        for(int i= message.Length -1; i >= 0; i--)
+        {
+            reversedMessage += message[i];
+        }
+    }
 }
